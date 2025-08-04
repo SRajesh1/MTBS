@@ -20,10 +20,12 @@ import movie17 from '../images/movie17.jpg';
 import movie18 from '../images/movie18.jpg';
 import movie19 from '../images/movie19.jpg';
 import movie20 from '../images/movie20.jpg';
+import { useNavigate } from 'react-router-dom';
 
 
 const MovieSection = () => {
   const [activeTab, setActiveTab] = useState('nowShowing');
+  const navigate = useNavigate();
 
   const movies = {
     nowShowing: [
@@ -222,6 +224,10 @@ const MovieSection = () => {
     container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   };
 
+  const handleBooking = (movieId) => {
+    navigate(`/booking/${movieId}`);
+  };
+
   return (
     <section className="py-16 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -283,7 +289,10 @@ const MovieSection = () => {
                         <FiClock />
                         <span>{movie.duration} min</span>
                       </div>
-                      <button className="mt-2 w-full py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors">
+                      <button 
+                        onClick={() => handleBooking(movie.id)}
+                        className="mt-2 w-full py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors"
+                      >
                         Book Now
                       </button>
                     </div>

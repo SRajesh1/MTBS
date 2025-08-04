@@ -11,6 +11,8 @@ import Testimonials from './components/Testimonials';
 import CtaBanner from './components/CtaBanner';
 import Footer from './components/Footer';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import MovieBooking from './components/MovieBooking';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -67,15 +69,21 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-900">
       <Navbar />
-      <main>
-        <HeroSection />
-        <MovieSection />
-        <GenreSection />
-        <HowItWorks />
-        <Testimonials />
-        <CtaBanner />
-      </main>
-      <Footer />
+      <Routes>
+        <Route path="/" element={
+          <main>
+            <HeroSection />
+            <MovieSection />
+            <GenreSection />
+            <HowItWorks />
+            <Testimonials />
+            <CtaBanner />
+            <Footer />
+          </main>
+        } />
+        <Route path="/booking/:movieId" element={<MovieBooking />} />
+      </Routes>
+       
     </div>
   );
 }
