@@ -31,7 +31,7 @@ const Navbar = () => {
             <a href="#events" className="text-white hover:text-red-500 transition-colors">Events</a>
             <a href="#contact" className="text-white hover:text-red-500 transition-colors">Contact</a>
             <button className="px-4 py-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors">
-              Sign In
+              Profile
             </button>
           </div>
 
@@ -61,7 +61,7 @@ const Navbar = () => {
               Contact
             </a>
             <button className="w-full text-left px-3 py-2 text-white bg-red-600 rounded-md">
-              Sign In
+              Profile
             </button>
           </div>
         </div>
